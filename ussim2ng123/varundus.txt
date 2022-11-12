@@ -1,0 +1,21 @@
+    my_font = pygame.font.SysFont('times new roman', 90)
+    game_over_surface = large_font.render("YOU DIED", True, red)
+    game_over_rect = game_over_surface.get_rect()
+    game_over_rect.center = (frame_size_x / 2, frame_size_y / 4)
+    canvas.fill(black)
+    game_window.blit(game_over_surface, game_over_rect)
+    show_score(0, red, 'times', 20)
+    pygame.display.flip()
+    pygame.mixer.quit()
+    mp3_path = 'sound/death.wav'
+    pygame.init()
+    pygame.mixer.init()
+    pygame.mixer.music.load(mp3_path)
+    pygame.mixer.music.play(-1)
+
+    gameover_inst1 = medium_font.render("Restart", True, lyellow)
+
+    gameover_inst1_rect = gameover_inst1.get_rect()
+    gameover_inst1_rect.center = (frame_size_x / 2 - 200, 160)
+    #gameover_inst1_rect.center = (frame_size_x / 2 - 200, 160)
+    game_window.blit(gameover_inst1, gameover_inst1_rect)
